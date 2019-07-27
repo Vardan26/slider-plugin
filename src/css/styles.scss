@@ -21,6 +21,7 @@ ul{
 }
 
 .slider {
+  transition: .8s;
   &-wrapper {
     flex-direction: column;
     align-items: center;
@@ -36,6 +37,11 @@ ul{
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    transition: .5s ease-in-out;
+    opacity: 0;
+  }
+  &--fade{
+    transition: none;
   }
 }
 
@@ -47,11 +53,12 @@ ul{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     margin: 5px;
     cursor: pointer;
-    &:hover{
-      background: rgba(0, 0, 0, 0.7);
+    &:hover,
+    &--active{
+      background: rgba(0, 0, 0, 0.6);
     }
   }
 }
@@ -75,4 +82,8 @@ ul{
   .next{
     right: 0;
   }
+}
+
+.active{
+  opacity: 1;
 }
